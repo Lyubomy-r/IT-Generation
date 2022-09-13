@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Bitcoin {
+    public static void main(String[] args) {
+
+        Scanner bitcoin = new Scanner(System.in);
+        System.out.println("What is Bitcoin price today?");
+        double courseBitcoin =bitcoin.nextInt();
+        while(courseBitcoin<=0) {
+            System.out.println(" Please write correct price ! ");
+             courseBitcoin =bitcoin.nextInt();
+        }
+        System.out.println("How much $ do you have?");
+        double exchangeAmount = bitcoin.nextInt();
+        while(exchangeAmount<=0) {
+            System.out.println("You can't buy BTC on this $. Write  How much $ do you have? ");
+             exchangeAmount = bitcoin.nextInt();
+        }
+        double yourBitcoint= exchangeAmount/courseBitcoin;
+        System.out.printf("You can buy %.7f BTC",yourBitcoint);
+        bitcoin.close();
+    }
+}
